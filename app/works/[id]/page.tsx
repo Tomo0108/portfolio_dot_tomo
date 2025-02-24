@@ -24,15 +24,15 @@ const works: { [key: string]: WorkDetails } = {
   "1": {
     id: "1",
     title: "Pokémon Holiday Special",
-    image: "/works/pokemon-christmas.jpg",
+    image: "/works/pokemon-christmas.JPG",
     description: "ポケモンたちとのクリスマスをテーマにしたイラストレーション作品",
     details: {
       fullDescription: "メインキャラクターであるピカチュウ、ミュウ、リザードン、そしてコンビーが、クリスマスツリーの周りで楽しく過ごす様子を描いた作品です。雪の結晶や温かな光の演出により、幻想的で心温まる雰囲気を表現しています。",
       technologies: ["Photoshop", "Illustrator", "Digital Painting"],
       images: [
-        "/works/pokemon-christmas.jpg",
-        "/works/pokemon-christmas-sketch.jpg",
-        "/works/pokemon-christmas-color.jpg"
+        "/works/pokemon-christmas.JPG",
+        "/works/pokemon-christmas-sketch.JPG",
+        "/works/pokemon-christmas-color.JPG"
       ]
     }
   },
