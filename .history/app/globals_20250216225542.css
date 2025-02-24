@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  :root {
+    /* ライトモード - ソフトパステル */
+    --background: 210 100% 97%;  /* ソフトスカイブルー */
+    --foreground: 220 15% 20%;  /* ソフトグレー */
+    
+    --card: 210 100% 95%;
+    --card-foreground: 220 15% 20%;
+    
+    --popover: 210 100% 95%;
+    --popover-foreground: 220 15% 20%;
+    
+    --primary: 340 100% 85%;   /* ソフトピンク */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 120 100% 85%; /* ソフトミントグリーン */
+    --secondary-foreground: 0 0% 20%;
+    
+    --muted: 210 50% 90%;
+    --muted-foreground: 0 0% 40%;
+    
+    --accent: 270 100% 90%;   /* ソフトラベンダー */
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 50% 80%;
+    --input: 210 50% 80%;
+    --ring: 340 100% 75%;
+    
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* ダークモード - マホガニー基調のアンティーク */
+    --background: 10 30% 15%;  /* 深いマホガニー */
+    --foreground: 30 20% 85%;  /* アンティーククリーム */
+    
+    --card: 10 30% 18%;       /* 深いマホガニー */
+    --card-foreground: 30 20% 85%;
+    
+    --popover: 10 30% 18%;
+    --popover-foreground: 30 20% 85%;
+    
+    --primary: 15 45% 35%;    /* 赤褐色 */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 50 40% 40%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 10 20% 20%;
+    --muted-foreground: 0 0% 70%;
+    
+    --accent: 220 30% 30%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 10 20% 25%;
+    --input: 10 20% 25%;
+    --ring: 15 45% 35%;
+  }
+
+  .text-primary {
+    font-family: var(--font-press-start-2p);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ピクセルアニメーション */
+@keyframes pixel-pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pixel-transition {
+  transition: all 0.1s steps(5);
+}
+
+.pixel-hover:hover {
+  animation: pixel-pop 0.2s steps(5);
+}
+
+/* ピクセルボーダー */
+.pixel-border {
+  position: relative;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.pixel-border::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  background: linear-gradient(45deg, var(--primary) 25%, transparent 25%) -2px 0,
+              linear-gradient(-45deg, var(--primary) 25%, transparent 25%) -2px 0,
+              linear-gradient(45deg, transparent 75%, var(--primary) 75%),
+              linear-gradient(-45deg, transparent 75%, var(--primary) 75%);
+  background-size: 4px 4px;
+  z-index: -1;
+}
+
+/* ピクセルテキストシャドウ */
+.pixel-text-shadow {
+  text-shadow: 2px 2px 0 hsl(var(--primary));
+}

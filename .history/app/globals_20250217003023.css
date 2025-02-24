@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  :root {
+    /* ライトモード - クラシックトーン */
+    --background: 30 20% 95%; /* アンティーククリーム */
+    --foreground: 0 0% 20%; /* ダークグレー */
+  
+    --card: 30 20% 90%; /* ライトクリーム */
+    --card-foreground: 0 0% 20%; /* ダークグレー */
+  
+    --popover: 30 20% 90%; /* ライトクリーム */
+    --popover-foreground: 0 0% 20%; /* ダークグレー */
+  
+    --primary: 0 65% 30%; /* マホガニー */
+    --primary-foreground: 0 0% 100%; /* ホワイト */
+  
+    --secondary: 0 0% 50%; /* グレー */
+    --secondary-foreground: 0 0% 100%; /* ホワイト */
+  
+    --muted: 0 0% 80%; /* ライトグレー */
+    --muted-foreground: 0 0% 40%; /* ミディアムグレー */
+  
+    --accent: 60 70% 50%; /* ゴールデンイエロー */
+    --accent-foreground: 0 0% 100%; /* ホワイト */
+  
+    --destructive: 0 70% 50%; /* レッド */
+    --destructive-foreground: 0 0% 100%; /* ホワイト */
+  
+    --border: 0 0% 80%; /* ライトグレー */
+    --input: 0 0% 90%; /* オフホワイト */
+    --ring: 0 65% 30%; /* マホガニー */
+  
+    --radius: 0.5rem;
+  }
+  
+  .dark {
+    /* ダークモード - クラシックトーン */
+    --background: 0 65% 15%; /* ダークマホガニー */
+    --foreground: 0 0% 90%; /* アンティーククリーム */
+  
+    --card: 0 65% 20%; /* ミディアムマホガニー */
+    --card-foreground: 30 20% 90%; /* アンティーククリーム */
+  
+    --popover: 0 65% 20%; /* ミディアムマホガニー */
+    --popover-foreground: 30 20% 90%; /* アンティーククリーム */
+  
+    --primary: 30 20% 70%; /* アンティーククリーム */
+    --primary-foreground: 0 65% 15%; /* ダークマホガニー */
+  
+    --secondary: 0 0% 70%; /* ミディアムグレー */
+    --secondary-foreground: 30 20% 90%; /* アンティーククリーム */
+  
+    --muted: 0 0% 40%; /* ダークグレー */
+    --muted-foreground: 30 20% 90%; /* アンティーククリーム */
+  
+    --accent: 60 70% 40%; /* ダークゴールデンイエロー */
+    --accent-foreground: 0 65% 15%; /* ダークマホガニー */
+  
+    --destructive: 0 70% 40%; /* ダークレッド */
+    --destructive-foreground: 30 20% 90%; /* アンティーククリーム */
+  
+    --border: 0 0% 30%; /* ダークグレー */
+    --input: 0 0% 20%; /* ダークチャコール */
+    --ring: 0 65% 15%; /* ダークマホガニー */
+  
+    --radius: 0.5rem;
+  }
+
+  .text-primary {
+    font-family: var(--font-press-start-2p);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ピクセルアニメーション */
+@keyframes pixel-pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pixel-transition {
+  transition: all 0.1s steps(5);
+}
+
+.pixel-hover:hover {
+  animation: pixel-pop 0.2s steps(5);
+}
+
+/* ピクセルボーダー */
+.pixel-border {
+  position: relative;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.pixel-border::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  background: linear-gradient(45deg, var(--primary) 25%, transparent 25%) -2px 0,
+              linear-gradient(-45deg, var(--primary) 25%, transparent 25%) -2px 0,
+              linear-gradient(45deg, transparent 75%, var(--primary) 75%),
+              linear-gradient(-45deg, transparent 75%, var(--primary) 75%);
+  background-size: 4px 4px;
+  z-index: -1;
+}
+
+/* ピクセルテキストシャドウ */
+.pixel-text-shadow {
+  text-shadow: 2px 2px 0 hsl(var(--primary));
+}
+
+/* ギャラリー画像のアニメーションスタイル */
+.gallery-image {
+  opacity: 0.5;
+  animation: gallery-bounce 3.5s linear infinite, gallery-fade 3.5s linear infinite;
+}
+
+@keyframes gallery-bounce {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(calc(100% - 50px), 0);
+  }
+  50% {
+    transform: translate(calc(100% - 50px), calc(100% - 50px));
+  }
+  75% {
+    transform: translate(0, calc(100% - 50px));
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes gallery-fade {
+  0%, 90% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
