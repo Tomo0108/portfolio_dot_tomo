@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ModeToggle } from './mode-toggle';
 import { Menu, X } from 'lucide-react';
@@ -39,19 +38,9 @@ export function Navigation() {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <button
-            onClick={() => {
-              const currentPath = window.location.pathname;
-              if (currentPath === '/') {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              } else {
-                window.location.href = '/';
-              }
-            }}
-            className="text-xl font-bold"
-          >
+          <Link href="/" className="text-xl font-bold">
             Portfolio
-          </button>
+          </Link>
 
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (

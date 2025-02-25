@@ -44,7 +44,7 @@ export function ZennArticles({ articles }: ZennArticlesProps) {
                     href={article.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group block p-6 bg-background rounded-lg shadow-sm hover:shadow-md transition-all hover:-translate-y-1"
+                    className="block p-6 bg-background rounded-lg shadow-sm hover:shadow-md transition-shadow"
                     initial={{ opacity: 0, scale: 0.95, y: 20 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -80,7 +80,7 @@ export function ZennArticles({ articles }: ZennArticlesProps) {
                         <ArrowUpRight className="h-4 w-4" />
                       </motion.div>
                     </div>
-                  </motion.a>
+              </motion.a>
                 ))}
               </AnimatePresence>
             </div>

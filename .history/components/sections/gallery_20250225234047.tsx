@@ -96,23 +96,7 @@ export function Gallery() {
                     >
                       <div 
                         className="group relative aspect-square bg-muted rounded-lg overflow-hidden cursor-pointer w-full"
-                        onClick={() => handleItemClick(item.id)}
-                        onMouseEnter={() => index === 2 && setIsPaused(true)}
-                        onMouseLeave={() => setIsPaused(false)}
-                      >
-                        <Image
-                          src={item.image}
-                          alt={item.title}
-                          fill
-                          quality={100}
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          className="object-cover transition-all duration-300 group-hover:scale-[1.02]"
-                        />
-                      </div>
-                    </motion.div>
-                  ))}
-                </AnimatePresence>
-              </div>
+              </AnimatePresence>
             </div>
 
             <div className="flex justify-center gap-2">

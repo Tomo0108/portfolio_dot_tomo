@@ -44,7 +44,7 @@ export function ZennArticles({ articles }: ZennArticlesProps) {
                     href={article.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group block p-6 bg-background rounded-lg shadow-sm hover:shadow-md transition-all hover:-translate-y-1"
+                    className="block p-6 bg-background rounded-lg shadow-sm hover:shadow-md transition-shadow"
                     initial={{ opacity: 0, scale: 0.95, y: 20 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -54,33 +54,27 @@ export function ZennArticles({ articles }: ZennArticlesProps) {
                       ease: [0.4, 0, 0.2, 1]
                     }}
                   >
-                    <div className="flex items-center space-x-3 mb-4">
-                      <div className="relative w-10 h-10 bg-muted rounded-lg overflow-hidden">
-                        <div className="absolute inset-0 flex items-center justify-center text-2xl">
-                          {article.emoji}
-                        </div>
-                      </div>
-                      <div className="flex items-center text-muted-foreground">
-                        <Calendar className="h-4 w-4 mr-2" />
-                        <span className="text-sm">{format(new Date(article.date), 'yyyy/MM/dd')}</span>
-                      </div>
+                <div className="flex items-center space-x-3 mb-4">
+                  <div className="relative w-10 h-10 bg-muted rounded-lg overflow-hidden">
+                    <div className="absolute inset-0 flex items-center justify-center text-2xl">
+                      {article.emoji}
                     </div>
-                    <h3 className="text-lg font-semibold mb-2 line-clamp-2 group-hover:text-primary transition-colors">
-                      {article.title}
-                    </h3>
-                    <div className="flex items-center justify-between mt-4">
-                      <span className="text-sm text-muted-foreground">
-                        {article.likes} likes
-                      </span>
-                      <motion.div
-                        initial={{ x: -4, opacity: 0.5 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        className="group-hover:translate-x-1 transition-transform"
-                      >
-                        <ArrowUpRight className="h-4 w-4" />
-                      </motion.div>
-                    </div>
-                  </motion.a>
+                  </div>
+                  <div className="flex items-center text-muted-foreground">
+                    <Calendar className="h-4 w-4 mr-2" />
+                    <span className="text-sm">{format(new Date(article.date), 'yyyy/MM/dd')}</span>
+                  </div>
+                </div>
+                <h3 className="text-lg font-semibold mb-2 line-clamp-2 hover:text-primary transition-colors">
+                  {article.title}
+                </h3>
+                <div className="flex items-center justify-between mt-4">
+                  <span className="text-sm text-muted-foreground">
+                    {article.likes} likes
+                  </span>
+                  <ArrowUpRight className="h-4 w-4" />
+                </div>
+              </motion.a>
                 ))}
               </AnimatePresence>
             </div>

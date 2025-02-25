@@ -15,37 +15,23 @@ export function GalleryItemView({ item }: { item: GalleryItem }) {
   const router = useRouter();
   const [selectedTab, setSelectedTab] = useState<ImageType>("complete");
 
-  const imageTypes: Record<ImageType, { label: string; src: string }> = {
+  const imageTypes: Record<ImageType, { label: string; src: string; description: string }> = {
     line: {
       label: "線画",
       src: item.details.images.line,
+      description: "キャラクターの表情や動きを丁寧に描き込んだ線画段階。繊細なラインワークで感情を表現しています。"
     },
     color: {
       label: "彩色",
       src: item.details.images.color,
+      description: "光と影のバランスを意識した彩色作業。温かみのある色使いで雰囲気を演出しています。"
     },
     complete: {
       label: "完成",
       src: item.details.images.complete,
+      description: "細部まで丁寧に仕上げた完成イラスト。キャラクターの魅力を最大限に引き出しています。"
     },
   };
-
-  const descriptions: Record<string, Record<ImageType, string>> = {
-    "genshin_nahida1": {
-      line: "繊細なラインで表現したナヒーダの表情。キャラクターの可愛らしさと神秘的な雰囲気を大切に描き込んでいます。",
-      color: "草神らしい優しい色合いで彩色。透明感のある肌の表現や、髪の緑色のグラデーションにこだわりました。",
-      complete: "草元素をイメージした背景と、ナヒーダの神々しさを表現した仕上がり。細部まで丁寧に作り込んでいます。",
-    },
-    "pokemon-christmas": {
-      line: "ポケモンたちのクリスマスパーティーをラフに描いた線画。楽しい雰囲気を動きのある線で表現しました。",
-      color: "温かみのある色使いで、クリスマスらしい雰囲気を演出。ポケモンたちの個性的な色彩を活かしています。",
-      complete: "クリスマスの賑やかさとポケモンたちの可愛らしさを両立させた完成イラスト。細部の装飾にもこだわっています。",
-    },
-    // 他の作品のdescriptionもここに追加
-  };
-
-  const currentDescription = descriptions[item.id]?.[selectedTab] || 
-    "このイラストの詳細な説明は準備中です。";
 
   const filteredItems = Object.values(galleryItems).filter(
     (galleryItem) => galleryItem.id !== item.id
@@ -111,66 +97,17 @@ export function GalleryItemView({ item }: { item: GalleryItem }) {
             </div>
             
             <div className="space-y-8">
-              <div className="space-y-4">
-                <div className="grid grid-cols-[1fr,auto] gap-4">
-                <div className="relative aspect-[4/3] w-full bg-muted rounded-lg overflow-hidden">
-                  <Image
-                    src={imageTypes[selectedTab].src}
-                    alt={`${item.title} - ${imageTypes[selectedTab].label}`}
-                    fill
-                    className="object-contain"
-                    priority
-                  />
-                </div>
-
-                <div className="flex flex-col gap-4 py-2">
-                  {(Object.entries(imageTypes) as [ImageType, { label: string; src: string; description: string }][]).map(([key, { label }]) => {
-                    const icon = key === 'line' ? <Pencil className="h-5 w-5" /> :
-                             key === 'color' ? <Palette className="h-5 w-5" /> :
-                             <ImageIcon className="h-5 w-5" />;
-                    
-                    return (
-                      <button
-                        key={key}
-                        onClick={() => setSelectedTab(key)}
-                        className={cn(
-                          "p-3 rounded-lg border-2 transition-all duration-200",
-                          "hover:bg-muted/50",
-                          selectedTab === key
-                            ? "border-primary bg-primary/5"
-                            : "border-border"
-                        )}
-                      >
-                        <div className="flex flex-col items-center gap-2">
-                          <div className={cn(
-                            "p-2 rounded-full",
-                            selectedTab === key
-                              ? "bg-primary/10 text-primary"
-                              : "bg-muted text-muted-foreground"
-                          )}>
-                            {icon}
-                          </div>
-                          <span className="text-sm font-medium">{label}</span>
-                        </div>
-                      </button>
-                    );
-                  })}
-                </div>
-                </div>
-                <div className="bg-muted/20 rounded-lg p-4">
-                  <motion.p
-                    key={selectedTab}
-                    initial={{ opacity: 0, y: 5 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="text-muted-foreground text-sm leading-relaxed"
-                  >
-                    {currentDescription}
-                  </motion.p>
-                </div>
+              <div className="relative aspect-[4/3] w-full bg-muted rounded-lg overflow-hidden">
+                <Image
+                  src={imageTypes[selectedTab].src}
+                  alt={`${item.title} - ${imageTypes[selectedTab].label}`}
+                  fill
+                  className="object-contain"
+                  priority
+                />
               </div>
 
-              <div className="mt-8 bg-muted/50 rounded-xl p-8 space-y-8">
+              <div className="bg-muted/50 rounded-xl p-8 space-y-8">
                 <div>
                   <h1 className="text-3xl font-bold font-heading mb-4 text-foreground/90">{item.title}</h1>
                   <div className="prose dark:prose-invert max-w-none">
@@ -179,6 +116,46 @@ export function GalleryItemView({ item }: { item: GalleryItem }) {
                 </div>
 
                 <div className="space-y-6">
+                  <div>
+                    <h2 className="text-xl font-bold font-heading mb-4 text-foreground/80">作業工程</h2>
+                    <div className="grid grid-cols-3 gap-4">
+                      {(Object.entries(imageTypes) as [ImageType, { label: string; src: string; description: string }][]).map(([key, { label }]) => {
+                        const icon = key === 'line' ? <Pencil className="h-5 w-5" /> :
+                                  key === 'color' ? <Palette className="h-5 w-5" /> :
+                                  <ImageIcon className="h-5 w-5" />;
+                        
+                        return (
+                          <button
+                            key={key}
+                            onClick={() => setSelectedTab(key)}
+                            className={cn(
+                              "p-4 rounded-lg border-2 transition-all duration-200",
+                              "hover:bg-muted/50",
+                              selectedTab === key
+                                ? "border-primary bg-primary/5"
+                                : "border-border"
+                            )}
+                          >
+                            <div className="flex flex-col items-center space-y-2">
+                              <div className={cn(
+                                "p-2 rounded-full",
+                                selectedTab === key
+                                  ? "bg-primary/10 text-primary"
+                                  : "bg-muted text-muted-foreground"
+                              )}>
+                                {icon}
+                              </div>
+                              <span className="text-sm font-medium">{label}</span>
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
+                    <div className="mt-4 p-4 bg-background/50 rounded-lg">
+                      <p className="text-muted-foreground/90 text-sm leading-relaxed">{imageTypes[selectedTab].description}</p>
+                    </div>
+                  </div>
+
                   <div>
                     <h2 className="text-xl font-bold font-heading mb-4 text-foreground/80">使用ツール</h2>
                     <div className="flex flex-wrap gap-2">
@@ -197,6 +174,18 @@ export function GalleryItemView({ item }: { item: GalleryItem }) {
             </div>
 
             <div className="border-t border-border pt-8">
+              <div className="w-full bg-muted/50 rounded-lg p-6">
+                <div className="space-y-4">
+                  <h3 className="text-lg font-bold font-heading border-b border-border/50 pb-2">その他の作品</h3>
+                  <div className="relative h-[120px]">
+                    <div className="absolute inset-0 grid grid-cols-4 gap-3">
+                      <AnimatePresence initial={false} mode="popLayout">
+                        {otherItems.map((otherItem, index) => (
+                          <motion.div
+                            key={`${otherItem.id}-${index}`}
+                            initial={{ opacity: 0, x: 50, scale: 0.95 }}
+                            animate={{ 
+                              opacity: index === 1 ? 1 : 0.3,
               <div className="w-full bg-muted/50 rounded-lg p-6">
                 <div className="space-y-4">
                   <h3 className="text-lg font-bold font-heading border-b border-border/50 pb-2">その他の作品</h3>
@@ -271,16 +260,6 @@ export function GalleryItemView({ item }: { item: GalleryItem }) {
               </div>
             </div>
           </div>
-
-          <Button 
-            variant="ghost" 
-            size="icon"
-            className="fixed bottom-8 right-8 rounded-full bg-background/80 backdrop-blur shadow-lg hover:bg-background/90"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          >
-            <ChevronLeft className="h-5 w-5 -rotate-90" />
-            <span className="sr-only">Back to Top</span>
-          </Button>
         </div>
       </div>
     </div>

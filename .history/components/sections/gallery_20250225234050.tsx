@@ -106,22 +106,6 @@ export function Gallery() {
                           fill
                           quality={100}
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          className="object-cover transition-all duration-300 group-hover:scale-[1.02]"
-                        />
-                      </div>
-                    </motion.div>
-                  ))}
-                </AnimatePresence>
-              </div>
-            </div>
-
-            <div className="flex justify-center gap-2">
-              {allItems.map((_, index) => (
-                <Button
-                  key={index}
-                  variant="ghost"
-                  size="icon"
-                  className="w-6 h-6 p-0"
                   onClick={() => handleIndicatorClick(index)}
                 >
                   <Circle 

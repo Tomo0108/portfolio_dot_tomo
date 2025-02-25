@@ -15,37 +15,23 @@ export function GalleryItemView({ item }: { item: GalleryItem }) {
   const router = useRouter();
   const [selectedTab, setSelectedTab] = useState<ImageType>("complete");
 
-  const imageTypes: Record<ImageType, { label: string; src: string }> = {
+  const imageTypes: Record<ImageType, { label: string; src: string; description: string }> = {
     line: {
       label: "線画",
       src: item.details.images.line,
+      description: "キャラクターの表情や動きを丁寧に描き込んだ線画段階。繊細なラインワークで感情を表現しています。"
     },
     color: {
       label: "彩色",
       src: item.details.images.color,
+      description: "光と影のバランスを意識した彩色作業。温かみのある色使いで雰囲気を演出しています。"
     },
     complete: {
       label: "完成",
       src: item.details.images.complete,
+      description: "細部まで丁寧に仕上げた完成イラスト。キャラクターの魅力を最大限に引き出しています。"
     },
   };
-
-  const descriptions: Record<string, Record<ImageType, string>> = {
-    "genshin_nahida1": {
-      line: "繊細なラインで表現したナヒーダの表情。キャラクターの可愛らしさと神秘的な雰囲気を大切に描き込んでいます。",
-      color: "草神らしい優しい色合いで彩色。透明感のある肌の表現や、髪の緑色のグラデーションにこだわりました。",
-      complete: "草元素をイメージした背景と、ナヒーダの神々しさを表現した仕上がり。細部まで丁寧に作り込んでいます。",
-    },
-    "pokemon-christmas": {
-      line: "ポケモンたちのクリスマスパーティーをラフに描いた線画。楽しい雰囲気を動きのある線で表現しました。",
-      color: "温かみのある色使いで、クリスマスらしい雰囲気を演出。ポケモンたちの個性的な色彩を活かしています。",
-      complete: "クリスマスの賑やかさとポケモンたちの可愛らしさを両立させた完成イラスト。細部の装飾にもこだわっています。",
-    },
-    // 他の作品のdescriptionもここに追加
-  };
-
-  const currentDescription = descriptions[item.id]?.[selectedTab] || 
-    "このイラストの詳細な説明は準備中です。";
 
   const filteredItems = Object.values(galleryItems).filter(
     (galleryItem) => galleryItem.id !== item.id
@@ -165,7 +151,7 @@ export function GalleryItemView({ item }: { item: GalleryItem }) {
                     transition={{ duration: 0.2 }}
                     className="text-muted-foreground text-sm leading-relaxed"
                   >
-                    {currentDescription}
+                    {imageTypes[selectedTab].description}
                   </motion.p>
                 </div>
               </div>

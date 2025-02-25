@@ -41,10 +41,6 @@ export function Gallery() {
   };
 
   const handleItemClick = (itemId: string) => {
-    router.push(`/gallery/${itemId}`);
-  };
-
-  return (
     <section id="gallery" className="section-gallery py-24 space-y-20">
       <div className="container mx-auto px-6">
         <motion.div
@@ -62,57 +58,36 @@ export function Gallery() {
       <div className="w-full bg-muted/30">
         <div className="container mx-auto px-6 py-12">
           <div className="space-y-8">
-            <div className="relative h-[300px] md:h-[400px]">
-              <div className="absolute inset-0 grid grid-cols-5 gap-4 md:gap-6">
-                <AnimatePresence initial={false} mode="popLayout">
-                  {displayItems.map((item, index) => (
-                    <motion.div
-                      key={`${item.id}-${index}`}
-                      initial={{ 
-                        opacity: 0,
-                        x: 50,
-                        scale: 0.95
-                      }}
-                      animate={{ 
-                        opacity: index === 2 ? 1 : 0.3,
-                        scale: index === 2 ? 1 : 0.95,
-                        x: 0,
-                        zIndex: index === 2 ? 1 : 0
-                      }}
-                      exit={{ 
-                        opacity: 0,
-                        x: -50,
-                        transition: { duration: 0.4 }
-                      }}
-                      transition={{
-                        duration: 0.6,
-                        ease: [0.32, 0.72, 0, 1]
-                      }}
-                      className="col-span-1"
-                      style={{
-                        position: 'relative',
-                        transformOrigin: 'center center'
-                      }}
+            <div className="grid grid-cols-5 gap-4 md:gap-6">
+              {displayItems.map((item, index) => (
+                <motion.div
+                  key={`${item.id}-${index}`}
+                  layout
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: index === 2 ? 1 : 0.3 }}
+                  transition={{
+                    opacity: { duration: 0.5, ease: "easeInOut" },
+                    layout: { type: "spring", stiffness: 100, damping: 25 }
+                  }}
+                >
+                  <Link href={`/gallery/${item.id}`}>
+                    <div 
+                      className="group relative aspect-square bg-muted rounded-lg overflow-hidden cursor-pointer w-full"
+                      onMouseEnter={() => index === 2 && setIsPaused(true)}
+                      onMouseLeave={() => setIsPaused(false)}
                     >
-                      <div 
-                        className="group relative aspect-square bg-muted rounded-lg overflow-hidden cursor-pointer w-full"
-                        onClick={() => handleItemClick(item.id)}
-                        onMouseEnter={() => index === 2 && setIsPaused(true)}
-                        onMouseLeave={() => setIsPaused(false)}
-                      >
-                        <Image
-                          src={item.image}
-                          alt={item.title}
-                          fill
-                          quality={100}
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          className="object-cover transition-all duration-300 group-hover:scale-[1.02]"
-                        />
-                      </div>
-                    </motion.div>
-                  ))}
-                </AnimatePresence>
-              </div>
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        quality={100}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover transition-all duration-300 group-hover:scale-[1.02]"
+                      />
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
             </div>
 
             <div className="flex justify-center gap-2">

@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ModeToggle } from './mode-toggle';
@@ -39,39 +38,19 @@ export function Navigation() {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <button
-            onClick={() => {
-              const currentPath = window.location.pathname;
-              if (currentPath === '/') {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              } else {
-                window.location.href = '/';
-              }
-            }}
-            className="text-xl font-bold"
-          >
+          <Link href="/" className="text-xl font-bold">
             Portfolio
-          </button>
+          </Link>
 
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <button
+              <Link
                 key={item.href}
-                onClick={() => {
-                  const currentPath = window.location.pathname;
-                  if (currentPath === '/') {
-                    const element = document.getElementById(item.href.substring(1));
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  } else {
-                    window.location.href = `/${item.href}`;
-                  }
-                }}
+                href={item.href}
                 className="text-foreground/80 hover:text-foreground transition-colors"
               >
                 {item.label}
-              </button>
+              </Link>
             ))}
             <ModeToggle />
           </div>
@@ -94,24 +73,14 @@ export function Navigation() {
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
-                <button
+                <Link
                   key={item.href}
-                  onClick={() => {
-                    setIsOpen(false);
-                    const currentPath = window.location.pathname;
-                    if (currentPath === '/') {
-                      const element = document.getElementById(item.href.substring(1));
-                      if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    } else {
-                      window.location.href = `/${item.href}`;
-                    }
-                  }}
-                  className="block px-3 py-2 text-foreground/80 hover:text-foreground transition-colors w-full text-left"
+                  href={item.href}
+                  className="block px-3 py-2 text-foreground/80 hover:text-foreground transition-colors"
+                  onClick={() => setIsOpen(false)}
                 >
                   {item.label}
-                </button>
+                </Link>
               ))}
               <div className="px-3 py-2">
                 <ModeToggle />
