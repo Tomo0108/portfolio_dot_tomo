@@ -60,10 +60,10 @@ export function Gallery() {
       </div>
 
       <div className="w-full bg-muted/30">
-        <div className="container mx-auto px-6 py-6">
-          <div className="space-y-4">
-            <div className="relative aspect-[6/1.2] max-w-4xl mx-auto">
-              <div className="h-full grid grid-cols-5 gap-2 md:gap-4 items-center">
+        <div className="container mx-auto px-6 py-8">
+          <div className="space-y-6">
+            <div className="relative h-[300px] md:h-[400px]">
+              <div className="absolute inset-0 grid grid-cols-5 gap-2 md:gap-4">
                 <AnimatePresence initial={false} mode="popLayout">
                   {displayItems.map((item, index) => (
                     <motion.div
@@ -115,7 +115,7 @@ export function Gallery() {
               </div>
             </div>
 
-            <div className="flex justify-center gap-1.5 -mt-2">
+            <div className="flex justify-center gap-2 mt-2">
               {allItems.map((_, index) => (
                 <Button
                   key={index}

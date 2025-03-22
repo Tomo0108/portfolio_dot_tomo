@@ -26,23 +26,10 @@ export function Footer() {
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                <path d="M.264 23.771h4.984c.264 0 .498-.147.645-.352L19.614.874c.176-.293-.029-.645-.381-.645h-4.72c-.235 0-.44.117-.557.323L.03 23.361c-.088.176.029.41.234.41zM17.445 23.419l6.479-10.408c.205-.323-.029-.733-.41-.733h-4.691c-.176 0-.352.088-.44.235l-6.655 10.643c-.176.264.029.616.352.616h4.779c.234-.001.468-.118.586-.353z"/>
-              </svg>
-            </a>
-            <a
-              href="https://www.pixiv.net/users/16834528"
-              target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-foreground/60 hover:text-foreground transition-colors"
             >
-              <div className="w-5 h-5 relative">
-                <Image
-                  src="/img/pixiv_logo_icon_248844.webp"
-                  alt="Pixiv"
-                  fill
-                  className="object-contain opacity-70 hover:opacity-100 transition-all grayscale brightness-[1.6] hover:brightness-[1.8] dark:invert"
-                />
-              </div>
+              Zenn
             </a>
           </div>
         </div>

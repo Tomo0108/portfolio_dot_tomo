@@ -78,7 +78,7 @@ export function About() {
                                 src="/img/pixiv_logo_icon_248844.webp"
                                 alt="Pixiv"
                                 fill
-                                className="object-contain opacity-70 hover:opacity-100 transition-all grayscale brightness-[1.6] hover:brightness-[1.8] dark:invert"
+                                className="object-contain opacity-75 hover:opacity-100 transition-opacity"
                               />
                             </div>
                           </a>

@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { SkillsContainer } from '../skills-container';
 
 export function About() {
@@ -23,13 +22,13 @@ export function About() {
               <div className="bg-muted/50 rounded-xl shadow-sm p-8 md:p-12">
                 <div className="flex flex-col md:flex-row gap-8 items-center">
                   <div className="aspect-square w-48 md:w-64 flex-shrink-0 relative">
-                    <Image
-                      src="/img/profile.jpg"
-                      alt="Profile"
-                      fill
-                      className="object-cover rounded-full border-2 border-primary/70"
-                      priority
-                    />
+                    <div className="absolute inset-0">
+                      <img
+                        src="/img/profile.jpg"
+                        alt="Profile"
+                        className="w-full h-full object-cover rounded-full border-2 border-primary/70"
+                      />
+                    </div>
                   </div>
                   <div className="flex-grow">
                     <div className="bg-background/80 backdrop-blur-sm rounded-lg p-4 space-y-2 border border-border/50 transition-all duration-300 hover:bg-background">
@@ -73,14 +72,9 @@ export function About() {
                             rel="noopener noreferrer"
                             className="text-muted-foreground hover:text-foreground transition-colors"
                           >
-                            <div className="w-5 h-5 relative">
-                              <Image
-                                src="/img/pixiv_logo_icon_248844.webp"
-                                alt="Pixiv"
-                                fill
-                                className="object-contain opacity-70 hover:opacity-100 transition-all grayscale brightness-[1.6] hover:brightness-[1.8] dark:invert"
-                              />
-                            </div>
+                            <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                              <path d="M4.935 0A4.924 4.924 0 0 0 0 4.935v14.13A4.924 4.924 0 0 0 4.935 24h14.13A4.924 4.924 0 0 0 24 19.065V4.935A4.924 4.924 0 0 0 19.065 0zm7.81 4.547c2.181 0 4.058.676 5.399 1.847a6.118 6.118 0 0 1 2.116 4.66c.005 1.854-.88 3.476-2.257 4.563-1.375 1.092-3.225 1.697-5.258 1.697-2.314 0-4.46-.842-4.46-.842v2.718c.397.116 1.048.365.635.779H5.79c-.41-.41.19-.65.644-.779V7.666c-1.053.81-1.593 1.51-1.813 2.037-.264.63-1.329.892-1.329-.316 0-2.571 4.956-4.84 9.453-4.84zm-.095 2.264c-1.833 0-3.3.675-3.3 1.51v7.992s1.511.892 3.3.892c1.831 0 3.425-.669 3.425-5.344 0-4.676-1.594-5.05-3.425-5.05z"/>
+                            </svg>
                           </a>
                         </div>
                       </div>

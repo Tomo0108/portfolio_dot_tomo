@@ -23,13 +23,13 @@ export function About() {
               <div className="bg-muted/50 rounded-xl shadow-sm p-8 md:p-12">
                 <div className="flex flex-col md:flex-row gap-8 items-center">
                   <div className="aspect-square w-48 md:w-64 flex-shrink-0 relative">
-                    <Image
-                      src="/img/profile.jpg"
-                      alt="Profile"
-                      fill
-                      className="object-cover rounded-full border-2 border-primary/70"
-                      priority
-                    />
+                    <div className="absolute inset-0">
+                      <img
+                        src="/img/profile.jpg"
+                        alt="Profile"
+                        className="w-full h-full object-cover rounded-full border-2 border-primary/70"
+                      />
+                    </div>
                   </div>
                   <div className="flex-grow">
                     <div className="bg-background/80 backdrop-blur-sm rounded-lg p-4 space-y-2 border border-border/50 transition-all duration-300 hover:bg-background">
@@ -78,7 +78,7 @@ export function About() {
                                 src="/img/pixiv_logo_icon_248844.webp"
                                 alt="Pixiv"
                                 fill
-                                className="object-contain opacity-70 hover:opacity-100 transition-all grayscale brightness-[1.6] hover:brightness-[1.8] dark:invert"
+                                className="object-contain opacity-75 hover:opacity-100 transition-opacity"
                               />
                             </div>
                           </a>

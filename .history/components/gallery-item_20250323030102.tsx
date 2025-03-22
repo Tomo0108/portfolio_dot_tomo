@@ -159,7 +159,7 @@ export function GalleryItemView({ item }: { item: GalleryItem }) {
                             </span>
                           ) : null;
                         })()}
-                        <span className="block font-heading tracking-wider font-bold">{item.title}</span>
+                        <span className="block font-bold">{item.title}</span>
                       </span>
                     </h3>
                     <div>
@@ -183,7 +183,7 @@ export function GalleryItemView({ item }: { item: GalleryItem }) {
             <div className="border-t border-border pt-6">
               <div className="w-full bg-muted/50 rounded-lg p-5">
                 <div className="space-y-4">
-                  <h3 className="text-lg font-bold font-heading tracking-wider border-b border-border/50 pb-2">Other Works</h3>
+                  <h3 className="text-lg font-bold border-b border-border/50 pb-2">Other Works</h3>
                   <div className="relative h-[120px]">
                     <div className="absolute inset-0 grid grid-cols-4 gap-3">
                       <AnimatePresence initial={false} mode="popLayout">

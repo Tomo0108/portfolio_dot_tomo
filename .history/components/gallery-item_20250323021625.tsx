@@ -80,7 +80,7 @@ export function GalleryItemView({ item }: { item: GalleryItem }) {
     <div className="min-h-screen bg-secondary/10 py-16">
       <div className="container mx-auto px-4">
         <div className="bg-background rounded-xl shadow-sm py-12 px-6 md:px-12">
-          <div className="max-w-4xl mx-auto space-y-8">
+          <div className="max-w-4xl mx-auto space-y-12">
             <div className="flex justify-between items-center">
               <Button 
                 variant="ghost" 
@@ -95,17 +95,18 @@ export function GalleryItemView({ item }: { item: GalleryItem }) {
             
             <div className="space-y-8">
               <div className="space-y-4">
-                <div className="relative aspect-[4/3] w-full bg-muted rounded-lg overflow-hidden">
-                  <Image
-                    src={imageTypes[selectedTab].src}
-                    alt={`${item.title} - ${imageTypes[selectedTab].label}`}
-                    fill
-                    className="object-contain"
-                    priority
-                  />
-                </div>
+                <div className="space-y-4">
+                  <div className="relative aspect-[4/3] w-full bg-muted rounded-lg overflow-hidden">
+                    <Image
+                      src={imageTypes[selectedTab].src}
+                      alt={`${item.title} - ${imageTypes[selectedTab].label}`}
+                      fill
+                      className="object-contain"
+                      priority
+                    />
+                  </div>
 
-                <div className="flex justify-center gap-6">
+                  <div className="flex justify-center gap-4">
                   {(Object.entries(imageTypes) as [ImageType, { label: string; src: string }][]).map(([key, { label }]) => {
                     const icon = key === 'line' ? <Pencil className="h-5 w-5" /> :
                              key === 'color' ? <Palette className="h-5 w-5" /> :
@@ -116,74 +117,61 @@ export function GalleryItemView({ item }: { item: GalleryItem }) {
                         key={key}
                         onClick={() => setSelectedTab(key)}
                         className={cn(
-                          "p-2 rounded-lg border-2 transition-all duration-200",
+                          "p-3 rounded-lg border-2 transition-all duration-200",
                           "hover:bg-muted/50",
                           selectedTab === key
                             ? "border-primary bg-primary/5"
                             : "border-border"
                         )}
                       >
-                        <div className="flex items-center gap-3">
+                        <div className="flex flex-col items-center gap-2">
                           <div className={cn(
-                            "p-1.5 rounded-full",
+                            "p-2 rounded-full",
                             selectedTab === key
                               ? "bg-primary/10 text-primary"
                               : "bg-muted text-muted-foreground"
                           )}>
                             {icon}
                           </div>
-                          <span className="text-sm font-medium leading-none">{label}</span>
+                          <span className="text-sm font-medium">{label}</span>
                         </div>
                       </button>
                     );
                   })}
                 </div>
+                </div>
               </div>
 
-              <div className="bg-muted/50 rounded-xl p-8">
-                <div className="bg-background/80 backdrop-blur-sm rounded-lg p-6 border border-border/50">
-                  <div className="space-y-4">
-                    <h3 className="text-xl md:text-2xl">
-                      <span className="bg-white dark:bg-white px-2 py-1 rounded inline-block text-black">
-                        {(() => {
-                          const jpNames: { [key: string]: string } = {
-                            "Nahida": "ナヒーダ",
-                            "Nahida II": "ナヒーダ",
-                            "Killua": "キルア",
-                            "Pokemon New Year [Dragon]": "ポケモン お正月［辰年］",
-                            "Pokemon Christmas": "ポケモン クリスマス"
-                          };
-                          return jpNames[item.title] ? (
-                            <span className="block text-sm mb-1 font-bold japanese-heading">
-                              {jpNames[item.title]}
-                            </span>
-                          ) : null;
-                        })()}
-                        <span className="block font-heading tracking-wider font-bold">{item.title}</span>
-                      </span>
-                    </h3>
-                    <div>
-                      <div className="text-sm text-muted-foreground mb-2">Tools</div>
-                      <div className="flex flex-wrap gap-2 mt-1">
-                        {item.details.technologies.map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-3 py-1 bg-background rounded-full text-sm border border-border"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
+              <div className="mt-8 bg-muted/50 rounded-xl p-8 space-y-8">
+                <div>
+                  <h1 className="text-3xl font-bold font-heading mb-4 text-foreground/90">{item.title}</h1>
+                  <div className="prose dark:prose-invert max-w-none">
+                    <p className="text-muted-foreground text-lg leading-relaxed">{item.details.fullDescription}</p>
+                  </div>
+                </div>
+
+                <div className="space-y-6">
+                  <div>
+                    <h2 className="text-xl font-bold font-heading mb-4 text-foreground/80">使用ツール</h2>
+                    <div className="flex flex-wrap gap-2">
+                      {item.details.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 bg-background rounded-full text-sm border border-border"
+                        >
+                          {tech}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="border-t border-border pt-6">
-              <div className="w-full bg-muted/50 rounded-lg p-5">
+            <div className="border-t border-border pt-8">
+              <div className="w-full bg-muted/50 rounded-lg p-6">
                 <div className="space-y-4">
-                  <h3 className="text-lg font-bold font-heading tracking-wider border-b border-border/50 pb-2">Other Works</h3>
+                  <h3 className="text-lg font-bold font-heading border-b border-border/50 pb-2">その他の作品</h3>
                   <div className="relative h-[120px]">
                     <div className="absolute inset-0 grid grid-cols-4 gap-3">
                       <AnimatePresence initial={false} mode="popLayout">

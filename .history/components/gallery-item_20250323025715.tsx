@@ -137,42 +137,46 @@ export function GalleryItemView({ item }: { item: GalleryItem }) {
                       </button>
                     );
                   })}
+                  })}
+                </div>
                 </div>
               </div>
 
               <div className="bg-muted/50 rounded-xl p-8">
                 <div className="bg-background/80 backdrop-blur-sm rounded-lg p-6 border border-border/50">
                   <div className="space-y-4">
-                    <h3 className="text-xl md:text-2xl">
-                      <span className="bg-white dark:bg-white px-2 py-1 rounded inline-block text-black">
-                        {(() => {
-                          const jpNames: { [key: string]: string } = {
-                            "Nahida": "ナヒーダ",
-                            "Nahida II": "ナヒーダ",
-                            "Killua": "キルア",
-                            "Pokemon New Year [Dragon]": "ポケモン お正月［辰年］",
-                            "Pokemon Christmas": "ポケモン クリスマス"
-                          };
-                          return jpNames[item.title] ? (
-                            <span className="block text-sm mb-1 font-bold japanese-heading">
-                              {jpNames[item.title]}
+                      <h3 className="text-xl md:text-2xl font-bold text-foreground">
+                        <span className="bg-white dark:bg-white px-2 py-1 rounded inline-block text-black">
+                          {(() => {
+                            const jpNames: { [key: string]: string } = {
+                              "Nahida": "ナヒーダ",
+                              "Nahida II": "ナヒーダ",
+                              "Killua": "キルア",
+                              "Pokemon New Year [Dragon]": "ポケモン お正月［辰年］",
+                              "Pokemon Christmas": "ポケモン クリスマス"
+                            };
+                            return jpNames[item.title] ? (
+                              <span className="block text-sm mb-1 japanese-heading">
+                                {jpNames[item.title]}
+                              </span>
+                            ) : null;
+                          })()}
+                          <span className="block">{item.title}</span>
+                        </span>
+                      </h3>
+                      <div className="border-b border-border w-12" />
+                      <div>
+                        <div className="text-sm text-muted-foreground mb-2">Tools</div>
+                        <div className="flex flex-wrap gap-2 mt-1">
+                          {item.details.technologies.map((tech) => (
+                            <span
+                              key={tech}
+                              className="px-3 py-1 bg-background rounded-full text-sm border border-border"
+                            >
+                              {tech}
                             </span>
-                          ) : null;
-                        })()}
-                        <span className="block font-heading tracking-wider font-bold">{item.title}</span>
-                      </span>
-                    </h3>
-                    <div>
-                      <div className="text-sm text-muted-foreground mb-2">Tools</div>
-                      <div className="flex flex-wrap gap-2 mt-1">
-                        {item.details.technologies.map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-3 py-1 bg-background rounded-full text-sm border border-border"
-                          >
-                            {tech}
-                          </span>
-                        ))}
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -183,7 +187,7 @@ export function GalleryItemView({ item }: { item: GalleryItem }) {
             <div className="border-t border-border pt-6">
               <div className="w-full bg-muted/50 rounded-lg p-5">
                 <div className="space-y-4">
-                  <h3 className="text-lg font-bold font-heading tracking-wider border-b border-border/50 pb-2">Other Works</h3>
+                  <h3 className="text-lg font-bold font-heading border-b border-border/50 pb-2">Other Works</h3>
                   <div className="relative h-[120px]">
                     <div className="absolute inset-0 grid grid-cols-4 gap-3">
                       <AnimatePresence initial={false} mode="popLayout">
