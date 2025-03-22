@@ -6,6 +6,14 @@ import { RotatingNav } from '../rotating-nav';
 export function Hero() {
   return (
     <section className="section-hero min-h-screen flex items-center justify-center relative bg-background/80 overflow-hidden">
+      <div 
+        className="absolute inset-0 bg-repeat opacity-30"
+        style={{
+          backgroundImage: `url('/img/bg_whitedust.PNG')`,
+          backgroundSize: '200px',
+          mixBlendMode: 'overlay'
+        }}
+      />
       <div className="relative w-[90vh] h-[90vh] max-w-[90vw] max-h-[90vw] mx-auto backdrop-blur-sm">
         <div className="absolute inset-0 flex items-center justify-center">
           <motion.div 
@@ -17,6 +25,9 @@ export function Hero() {
             <h1 className="heading-hero text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
               <span className="text-primary">Portfolio.ToMo</span>
             </h1>
+            <p className="text-muted-foreground text-xl md:text-2xl">
+              Web Developer & Creative Engineer
+            </p>
           </motion.div>
         </div>
         <RotatingNav />

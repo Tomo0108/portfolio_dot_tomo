@@ -17,6 +17,9 @@ export function Hero() {
             <h1 className="heading-hero text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
               <span className="text-primary">Portfolio.ToMo</span>
             </h1>
+            <p className="text-muted-foreground text-xl md:text-2xl">
+              Web Developer & Creative Engineer
+            </p>
           </motion.div>
         </div>
         <RotatingNav />

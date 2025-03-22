@@ -18,7 +18,7 @@ export function Hero() {
               <span className="text-primary">Portfolio.ToMo</span>
             </h1>
           </motion.div>
-        </div>
+        </div>こ
         <RotatingNav />
       </div>
     </section>

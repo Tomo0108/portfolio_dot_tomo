@@ -108,7 +108,7 @@ export function Navigation() {
                       window.location.href = `/${item.href}`;
                     }
                   }}
-                  className="block px-3 py-2 text-foreground/80 hover:text-foreground relative after:absolute after:left-3 after:bottom-1.5 after:w-[calc(100%-24px)] after:h-0.5 after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left w-full text-left"
+                  className="block px-3 py-2 text-foreground/80 hover:text-foreground transition-colors w-full text-left"
                 >
                   {item.label}
                 </button>

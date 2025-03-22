@@ -86,10 +86,6 @@
   .text-primary {
     font-family: var(--font-press-start-2p);
   }
-
-  .japanese-heading {
-    font-family: 'Sawarabi Gothic', sans-serif;
-  }
 }
 
 @layer base {

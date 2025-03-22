@@ -73,7 +73,7 @@ export function RotatingNav() {
     <div 
       className={cn(
         "absolute inset-0 flex items-center justify-center pointer-events-none",
-        "opacity-30 hover:opacity-100 transition-opacity duration-300",
+        "opacity-30 hover:opacity-100 transition-opacity duration-300 z-10",
         !isRotating && "nav-paused"
       )}
     >
