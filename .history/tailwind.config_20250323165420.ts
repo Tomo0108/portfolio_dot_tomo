@@ -13,7 +13,7 @@ const config: Config = {
         sans: ['var(--font-plus-jakarta-sans)'],
         heading: ['var(--font-outfit)'],
         pixel: ['var(--font-press-start-2p)'],
-        japanese: ['var(--font-sawarabi-gothic)'],
+        japanese: ['Sawarabi Gothic', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

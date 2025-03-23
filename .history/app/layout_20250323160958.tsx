@@ -1,6 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Outfit, Plus_Jakarta_Sans, Sawarabi_Gothic } from 'next/font/google';
+import { Outfit, Plus_Jakarta_Sans } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/sonner';
 import { Navigation } from '@/components/navigation';
@@ -15,12 +15,6 @@ const outfit = Outfit({
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
   variable: '--font-plus-jakarta-sans',
-});
-
-const sawarabiGothic = Sawarabi_Gothic({
-  weight: '400',
-  subsets: ['latin'],
-  variable: '--font-sawarabi-gothic',
 });
 
 export const metadata: Metadata = {
@@ -38,7 +32,6 @@ export default function RootLayout({
       <body className={cn(
         outfit.variable,
         plusJakartaSans.variable,
-        sawarabiGothic.variable,
         'min-h-screen bg-background font-sans antialiased'
       )}>
         <ThemeProvider

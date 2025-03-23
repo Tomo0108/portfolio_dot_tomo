@@ -86,7 +86,7 @@ export const skills: Skill[] = [
       {
         id: "strategy-3",
         title: "既存フローの見直しによる業務効率化",
-        description: "ミスが起きやすい業務フローを見直し、業務効率を向上",
+        description: "ミスが起きやすい業務",
         longDescription: "詳細な技術仕様や成果についての詳細な説明をここに記載します。"
       }
     ]

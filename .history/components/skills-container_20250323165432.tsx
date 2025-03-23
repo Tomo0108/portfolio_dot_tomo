@@ -65,7 +65,7 @@ export function SkillsContainer() {
                   )}
                 >
                   <div className="space-y-1">
-                    <h5 className="font-japanese font-bold bg-white dark:bg-white text-black px-2 py-1 rounded inline-block">{example.title}</h5>
+                    <h5 className="font-japanese bg-white dark:bg-white text-black px-2 py-1 rounded inline-block">{example.title}</h5>
                     <p className="text-sm text-foreground/70">{example.description}</p>
                   </div>
                 </div>

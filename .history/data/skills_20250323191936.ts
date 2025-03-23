@@ -73,20 +73,20 @@ export const skills: Skill[] = [
     examples: [
       {
         id: "strategy-1",
-        title: "現場環境に最適化したDXコンサルティング",
-        description: "業務プロセスの自動化で、定常業務の所要時間が80%削減",
+        title: "DXコンサルティング",
+        description: "業務プロセスのデジタル化で、定常業務の所要時間が80",
         longDescription: "詳細な技術仕様や成果についての詳細な説明をここに記載します。"
       },
       {
         id: "strategy-2",
-        title: "リーダーとしてチームの生産性向上を実現",
-        description: "業務を適切に分担し、タスクの進捗管理を徹底",
+        title: "データ分析基盤の構築",
+        description: "KPIモニタリングシステムの導入で、意思決定の迅速化を実現",
         longDescription: "詳細な技術仕様や成果についての詳細な説明をここに記載します。"
       },
       {
         id: "strategy-3",
-        title: "既存フローの見直しによる業務効率化",
-        description: "ミスが起きやすい業務フローを見直し、業務効率を向上",
+        title: "プロジェクト管理改善",
+        description: "アジャイル手法の導入で、開発サイクルを50%短縮",
         longDescription: "詳細な技術仕様や成果についての詳細な説明をここに記載します。"
       }
     ]

@@ -85,8 +85,8 @@ export const skills: Skill[] = [
       },
       {
         id: "strategy-3",
-        title: "既存フローの見直しによる業務効率化",
-        description: "ミスが起きやすい業務フローを見直し、業務効率を向上",
+        title: "プロジェクト管理改善",
+        description: "アジャイル手法の導入で、開発サイクルを50%短縮",
         longDescription: "詳細な技術仕様や成果についての詳細な説明をここに記載します。"
       }
     ]

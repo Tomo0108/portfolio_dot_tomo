@@ -60,8 +60,8 @@ export const skills: Skill[] = [
       },
       {
         id: "creative-3",
-        title: "社内勉強会の企画・発表資料を制作",
-        description: "社内のAIリテラシーを向上させる勉強会の企画とデザインを制作",
+        title: "",
+        description: "一貫性のあるビジュアル表現の確立でブランド認知度が向上",
         longDescription: "詳細な技術仕様や成果についての詳細な説明をここに記載します。"
       }
     ]
@@ -69,24 +69,24 @@ export const skills: Skill[] = [
   {
     Icon: Lightbulb,
     title: "Strategy",
-    description: "生産性向上のための業務フローの作成・チームのマネジメントを行います",
+    description: "作業者の生産性向上のための戦略立案と実行をリードします",
     examples: [
       {
         id: "strategy-1",
-        title: "現場環境に最適化したDXコンサルティング",
-        description: "業務プロセスの自動化で、定常業務の所要時間が80%削減",
+        title: "DXコンサルティング",
+        description: "業務プロセスのデジタル化で、生産性が40%向上",
         longDescription: "詳細な技術仕様や成果についての詳細な説明をここに記載します。"
       },
       {
         id: "strategy-2",
-        title: "リーダーとしてチームの生産性向上を実現",
-        description: "業務を適切に分担し、タスクの進捗管理を徹底",
+        title: "データ分析基盤の構築",
+        description: "KPIモニタリングシステムの導入で、意思決定の迅速化を実現",
         longDescription: "詳細な技術仕様や成果についての詳細な説明をここに記載します。"
       },
       {
         id: "strategy-3",
-        title: "既存フローの見直しによる業務効率化",
-        description: "ミスが起きやすい業務フローを見直し、業務効率を向上",
+        title: "プロジェクト管理改善",
+        description: "アジャイル手法の導入で、開発サイクルを50%短縮",
         longDescription: "詳細な技術仕様や成果についての詳細な説明をここに記載します。"
       }
     ]
