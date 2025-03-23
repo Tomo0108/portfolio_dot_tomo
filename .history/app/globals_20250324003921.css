@@ -21,8 +21,7 @@
     /* ライトモード - クラシックトーン */
     --background: 30 20% 95%; /* アンティークリーム */
     --sub-background: 25 92.74% 80.34%; /* Works, Gallery用の背景色 */
-    --section-background: 210 114 45; /* About, Articles, Contact用の背景色 */
-    --accent-orange: 210 114 45; /* アクセントカラー */
+    --section-background: 25 70% 94%; /* やや濃いめのオレンジベージュ */
     --foreground: 0 0% 20%; /* ダークグレー */
   
     --card: 30 20% 90%; /* ライトクリーム */
@@ -146,33 +145,24 @@
   z-index: -1;
 }
 
-/* グリッド背景 - Works, Gallery */
+/* グリッド背景 */
 .grid-background {
   position: relative;
   background-color: hsl(var(--sub-background)) !important;
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 1px, transparent 1px) !important;
+    linear-gradient(to right, hsl(25 65% 40% / 0.2) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(25 65% 40% / 0.2) 1px, transparent 1px) !important;
   background-size: 24px 24px !important;
   background-position: 0 0;
-}
-
-/* セクションの共通スタイル */
-.grid-background,
-.section-grid {
-  display: block;
+  min-height: 100vh;
   width: 100%;
 }
 
-/* セクション背景 - About, Articles, Contact */
-.section-grid {
-  position: relative;
-  background-color: rgb(var(--section-background)) !important;
+.dark .grid-background {
+  background-color: hsl(var(--sub-background)) !important;
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1px, transparent 1px) !important;
-  background-size: 24px 24px !important;
-  background-position: 0 0;
+    linear-gradient(to right, hsl(25 65% 60% / 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(25 65% 60% / 0.15) 1px, transparent 1px) !important;
 }
 
 /* グリッドコンテンツ */

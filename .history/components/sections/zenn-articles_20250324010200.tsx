@@ -48,11 +48,13 @@ export function ZennArticles({ articles }: ZennArticlesProps) {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group block p-6 bg-background rounded-lg shadow-sm hover:shadow-md transition-all hover:-translate-y-1"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
+                    initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95, y: 20 }}
                     transition={{
-                      duration: 0.2
+                      duration: 0.4,
+                      delay: index * 0.1,
+                      ease: [0.4, 0, 0.2, 1]
                     }}
                   >
                     <div className="flex items-center space-x-3 mb-4">

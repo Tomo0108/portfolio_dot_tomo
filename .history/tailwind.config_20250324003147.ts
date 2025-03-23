@@ -29,7 +29,6 @@ const config: Config = {
         background: 'hsl(var(--background))',
         'sub-background': 'hsl(var(--sub-background))',
         'section-background': 'hsl(var(--section-background))',
-        'accent-orange': 'rgb(var(--accent-orange))',
         foreground: 'hsl(var(--foreground))',
         card: {
           DEFAULT: 'hsl(var(--card))',

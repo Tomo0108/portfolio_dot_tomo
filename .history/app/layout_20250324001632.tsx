@@ -36,12 +36,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
-        <BackgroundWrapper className={cn(
-          outfit.variable,
-          plusJakartaSans.variable,
-          sawarabiGothic.variable
-        )}>
+      <BackgroundWrapper className={cn(
+        outfit.variable,
+        plusJakartaSans.variable,
+        sawarabiGothic.variable
+      )}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -53,8 +52,7 @@ export default function RootLayout({
           <Footer />
           <Toaster />
         </ThemeProvider>
-        </BackgroundWrapper>
-      </body>
+      </BackgroundWrapper>
     </html>
   );
 }

@@ -27,7 +27,7 @@ const works = [
 
 export function Works() {
   return (
-    <section id="works" className="section-works py-16 grid-background">
+    <section id="works" className="section-works py-24 grid-background">
       <div className="container mx-auto px-6">
         <div className="bg-background rounded-xl shadow-sm py-16 px-6 md:px-12">
           <motion.div

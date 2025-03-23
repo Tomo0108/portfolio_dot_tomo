@@ -20,9 +20,7 @@
   :root {
     /* ライトモード - クラシックトーン */
     --background: 30 20% 95%; /* アンティークリーム */
-    --sub-background: 25 92.74% 80.34%; /* Works, Gallery用の背景色 */
-    --section-background: 210 114 45; /* About, Articles, Contact用の背景色 */
-    --accent-orange: 210 114 45; /* アクセントカラー */
+    --sub-background: 25 70% 97%; /* 薄いオレンジベージュ */
     --foreground: 0 0% 20%; /* ダークグレー */
   
     --card: 30 20% 90%; /* ライトクリーム */
@@ -57,7 +55,6 @@
     /* ダークモード - クラシックトーン */
     --background: 0 40% 15%; /* ダークマホガニー */
     --sub-background: 25 30% 25%; /* 暗めのオレンジベージュ */
-    --section-background: 25 30% 22%; /* より暗めのオレンジベージュ */
     --foreground: 0 0% 90%; /* アンティーククリーム */
   
     --card: 0 65% 20%; /* ミディアムマホガニー */
@@ -100,6 +97,9 @@
 @layer base {
   * {
     @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
@@ -146,39 +146,19 @@
   z-index: -1;
 }
 
-/* グリッド背景 - Works, Gallery */
+/* グリッド背景 */
 .grid-background {
-  position: relative;
-  background-color: hsl(var(--sub-background)) !important;
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 1px, transparent 1px) !important;
-  background-size: 24px 24px !important;
+    linear-gradient(hsl(25 65% 80% / 0.3) 1px, transparent 1px),
+    linear-gradient(to right, hsl(25 65% 80% / 0.3) 1px, transparent 1px);
+  background-size: 20px 20px;
   background-position: 0 0;
 }
 
-/* セクションの共通スタイル */
-.grid-background,
-.section-grid {
-  display: block;
-  width: 100%;
-}
-
-/* セクション背景 - About, Articles, Contact */
-.section-grid {
-  position: relative;
-  background-color: rgb(var(--section-background)) !important;
+.dark .grid-background {
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1px, transparent 1px) !important;
-  background-size: 24px 24px !important;
-  background-position: 0 0;
-}
-
-/* グリッドコンテンツ */
-.grid-background > * {
-  position: relative;
-  z-index: 1;
+    linear-gradient(hsl(25 65% 60% / 0.2) 1px, transparent 1px),
+    linear-gradient(to right, hsl(25 65% 60% / 0.2) 1px, transparent 1px);
 }
 
 /* ピクセルテキストシャドウ */

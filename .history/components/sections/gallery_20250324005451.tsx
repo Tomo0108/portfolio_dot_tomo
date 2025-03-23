@@ -118,7 +118,7 @@ export function Gallery() {
                 key={index}
                 variant="ghost"
                 size="icon"
-                className="w-6 h-6 p-0 hover:bg-accent-orange/10"
+                className="w-6 h-6 p-0"
                 onClick={() => handleIndicatorClick(index)}
               >
                 <Circle 

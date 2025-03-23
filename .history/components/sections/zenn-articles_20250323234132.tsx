@@ -25,34 +25,34 @@ export function ZennArticles({ articles }: ZennArticlesProps) {
   const displayedArticles = isExpanded ? articles : articles.slice(0, 3);
   
   return (
-    <section id="articles" className="section-articles py-16 section-grid">
+    <section id="articles" className="section-articles py-24">
       <div className="container mx-auto px-6">
-        <div className="bg-background rounded-xl shadow-sm py-16 px-6 md:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl font-bold font-heading text-center mb-12">
-              <span className="inline-block border-b-2 border-primary pb-2">Latest Articles</span>
-            </h2>
-          </motion.div>
-          <div className="space-y-8">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <AnimatePresence initial={false}>
-                {displayedArticles.map((article, index) => (
-                  <motion.a
-                    key={article.title}
-                    href={article.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group block p-6 bg-background rounded-lg shadow-sm hover:shadow-md transition-all hover:-translate-y-1"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{
-                      duration: 0.2
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-3xl font-bold font-heading text-center mb-12">
+            <span className="inline-block border-b-2 border-primary pb-2">Latest Articles</span>
+          </h2>
+        </motion.div>
+      </div>
+
+      <div className="w-full">
+        <div className="container mx-auto px-6">
+          <div className="bg-background rounded-xl shadow-sm py-16 px-6 md:px-12">
+            <div className="space-y-8">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <AnimatePresence initial={false}>
+                  {displayedArticles.map((article, index) => (
+                    <motion.a
+                      key={article.title}
+                      href={article.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      delay: index * 0.1,
+                      ease: [0.4, 0, 0.2, 1]
                     }}
                   >
                     <div className="flex items-center space-x-3 mb-4">
@@ -90,24 +90,26 @@ export function ZennArticles({ articles }: ZennArticlesProps) {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="flex justify-center"
+                className="flex justify-center mt-8"
               >
                 <Button
                   variant="ghost"
-                  size="icon"
+                  size="lg"
                   onClick={() => setIsExpanded(!isExpanded)}
-                  className="bg-accent-orange hover:bg-sub-background transition-all duration-200 w-10 h-10 rounded-full"
+                  className="group"
                 >
+                  <span className="mr-2">{isExpanded ? '折りたたむ' : 'もっと見る'}</span>
                   <ChevronDown 
-                    className={`h-5 w-5 transition-transform duration-200 text-white ${
+                    className={`h-4 w-4 transition-transform duration-200 ${
                       isExpanded ? 'rotate-180' : ''
                     }`}
                   />
                 </Button>
               </motion.div>
             )}
+            </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

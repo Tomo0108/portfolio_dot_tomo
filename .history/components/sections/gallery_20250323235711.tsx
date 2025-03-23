@@ -45,7 +45,7 @@ export function Gallery() {
   };
 
   return (
-    <section id="gallery" className="section-gallery py-16 grid-background">
+    <section id="gallery" className="section-gallery py-24 bg-secondary/10">
       <div className="container mx-auto px-6">
         <div className="bg-background rounded-xl shadow-sm py-16 px-6 md:px-12">
           <motion.div
@@ -108,28 +108,29 @@ export function Gallery() {
                     </div>
                   </motion.div>
                 ))}
-              </AnimatePresence>
+                </AnimatePresence>
+              </div>
             </div>
-          </div>
 
-          <div className="flex justify-center gap-1.5 mt-8">
-            {allItems.map((_, index) => (
-              <Button
-                key={index}
-                variant="ghost"
-                size="icon"
-                className="w-6 h-6 p-0 hover:bg-accent-orange/10"
-                onClick={() => handleIndicatorClick(index)}
-              >
-                <Circle 
-                  className={`h-2 w-2 transition-colors ${
-                    index === currentIndex 
-                      ? 'fill-accent-orange stroke-accent-orange' 
-                      : 'fill-none stroke-accent-orange/40'
-                  }`}
-                />
-              </Button>
-            ))}
+            <div className="flex justify-center gap-1.5 mt-8">
+              {allItems.map((_, index) => (
+                <Button
+                  key={index}
+                  variant="ghost"
+                  size="icon"
+                  className="w-6 h-6 p-0"
+                  onClick={() => handleIndicatorClick(index)}
+                >
+                  <Circle 
+                    className={`h-2 w-2 transition-colors ${
+                      index === currentIndex 
+                        ? 'fill-primary stroke-primary' 
+                        : 'fill-none stroke-muted-foreground/40'
+                    }`}
+                  />
+                </Button>
+              ))}
+            </div>
           </div>
         </div>
       </div>

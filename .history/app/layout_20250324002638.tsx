@@ -36,7 +36,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body className="bg-transparent">
         <BackgroundWrapper className={cn(
           outfit.variable,
           plusJakartaSans.variable,

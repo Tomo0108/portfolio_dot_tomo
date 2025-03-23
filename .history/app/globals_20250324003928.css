@@ -22,7 +22,6 @@
     --background: 30 20% 95%; /* アンティークリーム */
     --sub-background: 25 92.74% 80.34%; /* Works, Gallery用の背景色 */
     --section-background: 210 114 45; /* About, Articles, Contact用の背景色 */
-    --accent-orange: 210 114 45; /* アクセントカラー */
     --foreground: 0 0% 20%; /* ダークグレー */
   
     --card: 30 20% 90%; /* ライトクリーム */
@@ -155,12 +154,7 @@
     linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 1px, transparent 1px) !important;
   background-size: 24px 24px !important;
   background-position: 0 0;
-}
-
-/* セクションの共通スタイル */
-.grid-background,
-.section-grid {
-  display: block;
+  min-height: 100vh;
   width: 100%;
 }
 

@@ -48,11 +48,13 @@ export function ZennArticles({ articles }: ZennArticlesProps) {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group block p-6 bg-background rounded-lg shadow-sm hover:shadow-md transition-all hover:-translate-y-1"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
+                    initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95, y: 20 }}
                     transition={{
-                      duration: 0.2
+                      duration: 0.4,
+                      delay: index * 0.1,
+                      ease: [0.4, 0, 0.2, 1]
                     }}
                   >
                     <div className="flex items-center space-x-3 mb-4">
@@ -96,7 +98,7 @@ export function ZennArticles({ articles }: ZennArticlesProps) {
                   variant="ghost"
                   size="icon"
                   onClick={() => setIsExpanded(!isExpanded)}
-                  className="bg-accent-orange hover:bg-sub-background transition-all duration-200 w-10 h-10 rounded-full"
+                  className="bg-sub-background hover:bg-accent-orange transition-all duration-200 w-10 h-10 rounded-full"
                 >
                   <ChevronDown 
                     className={`h-5 w-5 transition-transform duration-200 text-white ${

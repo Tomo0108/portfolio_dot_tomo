@@ -14,7 +14,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="section-contact py-16 section-grid">
+    <section id="contact" className="section-contact py-24 bg-section-background">
       <div className="container mx-auto px-6">
         <div className="bg-background rounded-xl shadow-sm py-16 px-6 md:px-12">
           <motion.div

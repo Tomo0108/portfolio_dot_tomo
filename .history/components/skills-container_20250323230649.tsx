@@ -58,7 +58,7 @@ export function SkillsContainer() {
                 <CurrentIcon className="h-5 w-5" />
                 {currentSkill.title}
               </h3>
-              <p className="text-sm text-foreground/80">{currentSkill.description}</p>
+              <p className="text-foreground/80">{currentSkill.description}</p>
             </div>
 
             <div className="grid gap-4">
@@ -178,38 +178,6 @@ export function SkillsContainer() {
                                     className="text-blue-500 hover:text-blue-600 transition-colors text-sm"
                                   >
                                     新規タブで開く ↗
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          ) : example.id === 'creative-4' ? (
-                            <div className="pt-2 px-4 pb-4">
-                              <div className="space-y-4">
-                                <div className="flex flex-wrap justify-center gap-4">
-                                  <img
-                                    src="/gallery/pokemon-christmas.JPG"
-                                    alt="Gallery preview 1"
-                                    className="w-32 h-32 md:w-[320px] md:h-[200px] rounded-lg object-cover hover:opacity-90 transition-opacity shadow-sm"
-                                  />
-                                  <img
-                                    src="/gallery/genshin_nahida2.JPG"
-                                    alt="Gallery preview 2"
-                                    className="w-32 h-32 md:w-[320px] md:h-[200px] rounded-lg object-cover hover:opacity-90 transition-opacity shadow-sm"
-                                  />
-                                  <img
-                                    src="/gallery/hunterxhunter_kirua.JPG"
-                                    alt="Gallery preview 3"
-                                    className="w-32 h-32 md:w-[320px] md:h-[200px] rounded-lg object-cover hover:opacity-90 transition-opacity shadow-sm"
-                                  />
-                                </div>
-                                <div className="text-center">
-                                  <a
-                                    href="/gallery"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-blue-500 hover:text-blue-600 transition-colors text-sm"
-                                  >
-                                    ギャラリーを開く ↗
                                   </a>
                                 </div>
                               </div>

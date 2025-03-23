@@ -1,7 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Outfit, Plus_Jakarta_Sans, Sawarabi_Gothic } from 'next/font/google';
-import { BackgroundWrapper } from '@/components/background-wrapper';
+import { usePathname } from 'next/navigation';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/sonner';
 import { Navigation } from '@/components/navigation';
@@ -29,19 +29,23 @@ export const metadata: Metadata = {
   description: 'Welcome to my portfolio website.',
 };
 
-export default function RootLayout({
+function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
+  
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
-        <BackgroundWrapper className={cn(
-          outfit.variable,
-          plusJakartaSans.variable,
-          sawarabiGothic.variable
-        )}>
+      <body className={cn(
+        outfit.variable,
+        plusJakartaSans.variable,
+        sawarabiGothic.variable,
+        'min-h-screen font-sans antialiased',
+        isHomePage ? 'bg-background' : 'bg-sub-background'
+      )}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -53,7 +57,6 @@ export default function RootLayout({
           <Footer />
           <Toaster />
         </ThemeProvider>
-        </BackgroundWrapper>
       </body>
     </html>
   );

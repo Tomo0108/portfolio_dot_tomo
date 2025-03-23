@@ -27,7 +27,7 @@ const works = [
 
 export function Works() {
   return (
-    <section id="works" className="section-works py-16 grid-background">
+    <section id="works" className="section-works py-24 bg-primary/5">
       <div className="container mx-auto px-6">
         <div className="bg-background rounded-xl shadow-sm py-16 px-6 md:px-12">
           <motion.div
@@ -40,38 +40,39 @@ export function Works() {
               <span className="inline-block border-b-2 border-primary pb-2">Works</span>
             </h2>
           </motion.div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {works.map((work, index) => (
-              <motion.div
-                key={work.title}
-                className="group relative overflow-hidden rounded-lg"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-              >
-                <div className="relative aspect-video">
-                  <Image
-                    src={work.image}
-                    alt={work.title}
-                    fill
-                    className="object-cover transition-transform group-hover:scale-105"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
-                  <h3 className="text-white text-xl font-semibold mb-2">{work.title}</h3>
-                  <p className="text-white/80 text-sm mb-4">{work.description}</p>
-                  <a
-                    href={work.link}
-                    className="inline-flex items-center text-white hover:text-white/80"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View Project <ExternalLink className="ml-2 h-4 w-4" />
-                  </a>
-                </div>
-              </motion.div>
-            ))}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {works.map((work, index) => (
+                <motion.div
+                  key={work.title}
+                  className="group relative overflow-hidden rounded-lg"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: index * 0.2 }}
+                >
+                  <div className="relative aspect-video">
+                    <Image
+                      src={work.image}
+                      alt={work.title}
+                      fill
+                      className="object-cover transition-transform group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+                    <h3 className="text-white text-xl font-semibold mb-2">{work.title}</h3>
+                    <p className="text-white/80 text-sm mb-4">{work.description}</p>
+                    <a
+                      href={work.link}
+                      className="inline-flex items-center text-white hover:text-white/80"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Project <ExternalLink className="ml-2 h-4 w-4" />
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

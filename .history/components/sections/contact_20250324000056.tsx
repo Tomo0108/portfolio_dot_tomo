@@ -14,7 +14,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="section-contact py-16 section-grid">
+    <section id="contact" className="section-contact py-24 bg-secondary/10">
       <div className="container mx-auto px-6">
         <div className="bg-background rounded-xl shadow-sm py-16 px-6 md:px-12">
           <motion.div
@@ -34,35 +34,36 @@ export function Contact() {
                   メールアドレス
                 </label>
                 <div className="relative">
-                  <Mail className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="your@email.com"
-                    className="pl-10"
-                    required
-                  />
+                    <Mail className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="your@email.com"
+                      className="pl-10"
+                      required
+                    />
+                  </div>
                 </div>
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
-                  メッセージ
-                </label>
-                <div className="relative">
-                  <MessageSquare className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
-                  <Textarea
-                    id="message"
-                    placeholder="メッセージを入力してください..."
-                    className="pl-10 min-h-[150px]"
-                    required
-                  />
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium mb-2">
+                    メッセージ
+                  </label>
+                  <div className="relative">
+                    <MessageSquare className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
+                    <Textarea
+                      id="message"
+                      placeholder="メッセージを入力してください..."
+                      className="pl-10 min-h-[150px]"
+                      required
+                    />
+                  </div>
                 </div>
-              </div>
-              <Button type="submit" className="w-full">
-                メッセージを送信
-                <Send className="ml-2 h-4 w-4" />
-              </Button>
-            </form>
+                <Button type="submit" className="w-full">
+                  メッセージを送信
+                  <Send className="ml-2 h-4 w-4" />
+                </Button>
+              </form>
+            </div>
           </div>
         </div>
       </div>

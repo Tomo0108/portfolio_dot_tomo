@@ -189,17 +189,17 @@ export function SkillsContainer() {
                                   <img
                                     src="/gallery/pokemon-christmas.JPG"
                                     alt="Gallery preview 1"
-                                    className="w-32 h-32 md:w-[320px] md:h-[200px] rounded-lg object-cover hover:opacity-90 transition-opacity shadow-sm"
+                                    className="w-32 h-32 md:w-[260px] md:h-[180px] rounded-lg object-cover hover:opacity-90 transition-opacity shadow-sm"
                                   />
                                   <img
                                     src="/gallery/genshin_nahida2.JPG"
                                     alt="Gallery preview 2"
-                                    className="w-32 h-32 md:w-[320px] md:h-[200px] rounded-lg object-cover hover:opacity-90 transition-opacity shadow-sm"
+                                    className="w-32 h-32 md:w-[260px] md:h-[180px] rounded-lg object-cover hover:opacity-90 transition-opacity shadow-sm"
                                   />
                                   <img
                                     src="/gallery/hunterxhunter_kirua.JPG"
                                     alt="Gallery preview 3"
-                                    className="w-32 h-32 md:w-[320px] md:h-[200px] rounded-lg object-cover hover:opacity-90 transition-opacity shadow-sm"
+                                    className="w-32 h-32 md:w-[260px] md:h-[180px] rounded-lg object-cover hover:opacity-90 transition-opacity shadow-sm"
                                   />
                                 </div>
                                 <div className="text-center">

@@ -185,21 +185,21 @@ export function SkillsContainer() {
                           ) : example.id === 'creative-4' ? (
                             <div className="pt-2 px-4 pb-4">
                               <div className="space-y-4">
-                                <div className="flex flex-wrap justify-center gap-4">
+                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                                   <img
                                     src="/gallery/pokemon-christmas.JPG"
                                     alt="Gallery preview 1"
-                                    className="w-32 h-32 md:w-[320px] md:h-[200px] rounded-lg object-cover hover:opacity-90 transition-opacity shadow-sm"
+                                    className="w-full rounded-md aspect-square object-cover hover:opacity-90 transition-opacity"
                                   />
                                   <img
                                     src="/gallery/genshin_nahida2.JPG"
                                     alt="Gallery preview 2"
-                                    className="w-32 h-32 md:w-[320px] md:h-[200px] rounded-lg object-cover hover:opacity-90 transition-opacity shadow-sm"
+                                    className="w-full rounded-md aspect-square object-cover hover:opacity-90 transition-opacity"
                                   />
                                   <img
                                     src="/gallery/hunterxhunter_kirua.JPG"
                                     alt="Gallery preview 3"
-                                    className="w-32 h-32 md:w-[320px] md:h-[200px] rounded-lg object-cover hover:opacity-90 transition-opacity shadow-sm"
+                                    className="w-full rounded-md aspect-square object-cover hover:opacity-90 transition-opacity"
                                   />
                                 </div>
                                 <div className="text-center">

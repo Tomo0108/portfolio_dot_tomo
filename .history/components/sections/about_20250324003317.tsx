@@ -7,7 +7,7 @@ import { SkillsContainer } from '../skills-container';
 
 export function About() {
   return (
-    <section id="about" className="section-about py-16 section-grid">
+    <section id="about" className="section-about py-24 bg-section-background">
       <div className="container mx-auto px-4">
         <div className="bg-background rounded-xl shadow-sm py-16 px-6 md:px-12">
           <motion.div
