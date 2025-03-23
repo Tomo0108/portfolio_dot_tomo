@@ -22,15 +22,14 @@ export function PDFViewer({ pdfUrl }: PDFViewerProps) {
         />
         <div className="absolute bottom-4 left-0 right-0 flex items-center justify-center pointer-events-none">
           <div className="bg-background/95 px-4 py-2 rounded-full shadow-lg pointer-events-auto">
-            <a
-              href={pdfUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:text-primary/80 transition-colors text-sm"
-            >
-              PDFを新しいタブで開く
-            </a>
-          </div>
+          <a
+            href={pdfUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:text-primary/80 transition-colors text-sm"
+          >
+            PDFを新しいタブで開く
+          </a>
         </div>
       </div>
     </div>
