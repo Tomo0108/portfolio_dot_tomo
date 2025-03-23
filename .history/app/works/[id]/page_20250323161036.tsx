@@ -3,7 +3,6 @@ import { skills, Example } from "@/data/skills";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { SkillDetails } from "@/components/skill-details";
 
 interface WorkWithCategory extends Example {
   category: string;
@@ -62,13 +61,6 @@ export default function WorkPage({ params }: { params: { id: string } }) {
                     <p className="text-foreground/80">{work.longDescription}</p>
                   </div>
                 </div>
-              </div>
-
-              <div className="mt-8">
-                <SkillDetails
-                  work={work}
-                  pdfUrl={work.id === 'creative-2' ? '/pdf/会社案内_20240514.pdf' : undefined}
-                />
               </div>
             </div>
 
