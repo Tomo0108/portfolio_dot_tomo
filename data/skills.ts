@@ -48,20 +48,20 @@ export const skills: Skill[] = [
     examples: [
       {
         id: "creative-1",
-        title: "デザインに優れたホームページの実装",
+        title: "デザイン性に優れたホームページの実装",
         description: "要件に合わせて、デザインを最適化したホームページを制作",
         longDescription: "詳細な技術仕様や成果についての詳細な説明をここに記載します。"
       },
       {
         id: "creative-2",
-        title: "コンセプトを反映したRPG風デザインの会社案内を制作",
+        title: "会社のコンセプトを反映したRPG風デザインの会社案内を制作",
         description: "SES企業のブランドコンセプトを反映したデザインで、社内外の理解を深める会社案内を作成",
         longDescription: "詳細な技術仕様や成果についての詳細な説明をここに記載します。"
       },
       {
         id: "creative-3",
         title: "社内勉強会の企画・発表資料を制作",
-        description: "社内のAIリテラシーを向上させる勉強会の企画とデザインを制作",
+        description: "社内のAIリテラシーを向上させる勉強会の企画とスライドショーを制作",
         longDescription: "詳細な技術仕様や成果についての詳細な説明をここに記載します。"
       }
     ]
