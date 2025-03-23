@@ -76,7 +76,7 @@ export function SkillsContainer() {
             key={skill.title}
             onClick={() => setSelectedIndex(index)}
             className={cn(
-              "px-3 py-1.5 rounded-lg flex items-center gap-1.5 justify-center whitespace-nowrap",
+              "px-4 py-2.5 rounded-lg flex items-center gap-2.5 min-w-[160px] justify-center",
               "transition-all duration-300 hover:shadow-md hover:bg-background/50",
               selectedIndex === index
                 ? "bg-primary text-primary-foreground"
@@ -103,7 +103,7 @@ export function SkillsContainer() {
             className="space-y-6"
           >
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-primary flex items-center gap-2">
+              <h3 className="text-2xl font-semibold text-primary flex items-center gap-3">
                 {skills[selectedIndex].icon}
                 {skills[selectedIndex].title}
               </h3>
