@@ -9,8 +9,6 @@ import { skills } from '@/data/skills';
 
 export function SkillsContainer() {
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
-  const currentSkill = skills[selectedIndex];
-  const CurrentIcon = currentSkill.Icon;
 
   return (
     <div className="relative bg-muted/80 rounded-xl p-6 md:p-8 overflow-hidden backdrop-blur-sm border">
@@ -39,7 +37,7 @@ export function SkillsContainer() {
       <div className="relative min-h-[320px] md:min-h-[280px]">
         <AnimatePresence mode="wait">
           <motion.div
-            key={currentSkill.title}
+            key={skills[selectedIndex].title}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
@@ -51,14 +49,14 @@ export function SkillsContainer() {
           >
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold text-primary flex items-center gap-2">
-                <CurrentIcon className="h-5 w-5" />
-                {currentSkill.title}
+                <skills[selectedIndex].Icon className="h-5 w-5" />
+                {skills[selectedIndex].title}
               </h3>
-              <p className="text-foreground/80">{currentSkill.description}</p>
+              <p className="text-foreground/80">{skills[selectedIndex].description}</p>
             </div>
 
             <div className="space-y-2">
-              {currentSkill.examples.map((example) => (
+              {skills[selectedIndex].examples.map((example, index) => (
                 <Link 
                   href={`/works/${example.id}`}
                   key={example.id}
