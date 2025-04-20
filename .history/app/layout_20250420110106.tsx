@@ -29,10 +29,6 @@ export const metadata: Metadata = {
   description: 'Welcome to my portfolio website.',
   manifest: '/manifest.json',
   themeColor: '#000000',
-  icons: {
-    icon: '/logo/icon_tm.png', // 通常のファビコン
-    apple: '/logo/icon_tm.png', // Apple Touch Icon
-  },
 };
 
 export default function RootLayout({
