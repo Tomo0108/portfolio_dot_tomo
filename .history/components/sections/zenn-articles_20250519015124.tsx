@@ -76,7 +76,7 @@ export function ZennArticles({ articles }: ZennArticlesProps) {
                 </Badge>
                 <div className="text-base md:text-sm text-foreground/90 leading-relaxed font-medium">
                   日々の開発で得た気づきや、興味を持った技術について、Zennで発信しています。<br />
-                  他社からのフィードバックは嬉しいですし、何より、自分自身の学びを深めるためにもアウトプットを継続していきたいと考えています！
+                  たしゃかフィードバックは嬉しいですし、何より、自分自身の学びを深めるためにもアウトプットを継続していきたいと考えています！
                 </div>
               </CardContent>
             </Card>
