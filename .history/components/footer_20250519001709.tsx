@@ -40,7 +40,7 @@ export function Footer() {
                   src="/img/pixiv_logo_icon_248844.webp"
                   alt="Pixiv"
                   fill
-                  className="object-contain opacity-70 saturate-50 brightness-110 hover:opacity-100 hover:saturate-100 hover:brightness-100 transition-all"
+                  className="object-contain transition-all"
                 />
               </div>
             </a>
