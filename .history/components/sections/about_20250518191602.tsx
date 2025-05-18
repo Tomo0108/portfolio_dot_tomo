@@ -22,7 +22,7 @@ export function About() {
               <span className="inline-block border-b-2 border-primary pb-2">About Me</span>
             </h2>
             <div className="max-w-4xl mx-auto mb-16">
-              <div className="relative bg-muted/80 rounded-xl p-6 md:p-8 overflow-hidden backdrop-blur-sm border">
+              <div className="bg-muted/50 rounded-xl shadow-sm p-8 md:p-12">
                 <div className="flex flex-col md:flex-row gap-8 items-center">
                   <div className="aspect-square w-48 md:w-64 flex-shrink-0 relative">
                     <Image

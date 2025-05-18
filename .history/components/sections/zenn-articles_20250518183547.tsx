@@ -41,7 +41,7 @@ export function ZennArticles({ articles }: ZennArticlesProps) {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl font-bold font-heading mb-4">
-                <span className="inline-block border-b-2 border-primary pb-2">Articles</span>
+                <span className="inline-block border-b-2 border-primary pb-2">Latest Articles</span>
               </h2>
             </motion.div>
             <p>No articles found.</p>
@@ -64,7 +64,7 @@ export function ZennArticles({ articles }: ZennArticlesProps) {
                 transition={{ duration: 0.8 }}
               >
                 <h2 className="text-3xl font-bold font-heading text-center mb-12">
-                  <span className="inline-block border-b-2 border-primary pb-2">Articles</span>
+                  <span className="inline-block border-b-2 border-primary pb-2">Latest Articles</span>
                 </h2>
               </motion.div>
               {/* 上部に説明カラム */}

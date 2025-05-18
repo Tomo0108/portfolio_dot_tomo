@@ -4,8 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { SkillsContainer } from '../skills-container';
-import { Code2, Palette, Lightbulb, ExternalLink } from 'lucide-react';
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
+import { Code2 } from 'lucide-react';
 
 export function About() {
   return (
@@ -22,7 +21,7 @@ export function About() {
               <span className="inline-block border-b-2 border-primary pb-2">About Me</span>
             </h2>
             <div className="max-w-4xl mx-auto mb-16">
-              <div className="relative bg-muted/80 rounded-xl p-6 md:p-8 overflow-hidden backdrop-blur-sm border">
+              <div className="bg-muted/50 rounded-xl shadow-sm p-8 md:p-12">
                 <div className="flex flex-col md:flex-row gap-8 items-center">
                   <div className="aspect-square w-48 md:w-64 flex-shrink-0 relative">
                     <Image
@@ -84,6 +83,17 @@ export function About() {
                               />
                             </div>
                           </a>
+                        </div>
+                        <div className="mb-4">
+                          <div className="inline-flex items-center mb-2">
+                            <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary text-white border border-primary/80 text-sm font-medium gap-2">
+                              <Code2 className="h-4 w-4" />
+                              Technical Direction
+                            </span>
+                          </div>
+                          <div className="bg-background/90 rounded-lg px-4 py-3 text-base font-semibold text-foreground shadow-sm border border-border/40">
+                            AIを活用したWebアプリケーションの開発で、業務効率を飛躍的に向上させます
+                          </div>
                         </div>
                       </div>
                     </div>

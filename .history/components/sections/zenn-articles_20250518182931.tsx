@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Calendar, ThumbsUp, ExternalLink, Pencil } from 'lucide-react';
+import { Calendar, ThumbsUp, ExternalLink } from 'lucide-react';
 import { format } from 'date-fns';
 import Link from 'next/link';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -41,7 +41,7 @@ export function ZennArticles({ articles }: ZennArticlesProps) {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl font-bold font-heading mb-4">
-                <span className="inline-block border-b-2 border-primary pb-2">Articles</span>
+                <span className="inline-block border-b-2 border-primary pb-2">Latest Articles</span>
               </h2>
             </motion.div>
             <p>No articles found.</p>
@@ -64,15 +64,15 @@ export function ZennArticles({ articles }: ZennArticlesProps) {
                 transition={{ duration: 0.8 }}
               >
                 <h2 className="text-3xl font-bold font-heading text-center mb-12">
-                  <span className="inline-block border-b-2 border-primary pb-2">Articles</span>
+                  <span className="inline-block border-b-2 border-primary pb-2">Latest Articles</span>
                 </h2>
               </motion.div>
               {/* 上部に説明カラム */}
               <div className="mb-8">
                 <Card className="bg-background border border-primary/30 shadow-sm rounded-xl p-6">
-                  <Badge variant="outline" className="mb-3 px-3 py-1 text-sm font-medium border-primary/80 bg-primary text-white flex items-center gap-2">
-                    <Pencil className="h-4 w-4" />
-                    Zennでの技術記事の執筆・発信
+                  <Badge variant="outline" className="mb-3 px-3 py-1 text-sm font-medium border-primary/40 bg-primary/10 text-primary flex items-center gap-2">
+                    <ExternalLink className="h-4 w-4" />
+                    Zennについて
                   </Badge>
                   <div className="text-base md:text-sm text-foreground/90 leading-relaxed font-medium">
                     日々の開発で得た気づきや、興味を持った技術について、Zennで発信しています。<br />

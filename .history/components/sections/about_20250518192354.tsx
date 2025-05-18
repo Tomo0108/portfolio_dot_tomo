@@ -85,6 +85,16 @@ export function About() {
                             </div>
                           </a>
                         </div>
+                        {/* Technical Direction 一体型デザイン */}
+                        <div className="mb-4">
+                          <div className="flex items-center gap-3 bg-primary text-white border border-primary/80 rounded-t-xl px-4 py-2 font-medium shadow-sm">
+                            <Code2 className="h-5 w-5" />
+                            Technical Direction
+                          </div>
+                          <div className="bg-background/90 rounded-b-xl px-4 py-3 text-base font-semibold text-foreground shadow-sm border-x border-b border-primary/40 -mt-1">
+                            AIを活用したWebアプリケーションの開発で、業務効率を飛躍的に向上させます
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>

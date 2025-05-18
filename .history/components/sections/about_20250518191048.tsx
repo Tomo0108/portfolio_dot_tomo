@@ -22,7 +22,7 @@ export function About() {
               <span className="inline-block border-b-2 border-primary pb-2">About Me</span>
             </h2>
             <div className="max-w-4xl mx-auto mb-16">
-              <div className="relative bg-muted/80 rounded-xl p-6 md:p-8 overflow-hidden backdrop-blur-sm border">
+              <div className="bg-muted/50 rounded-xl shadow-sm p-8 md:p-12">
                 <div className="flex flex-col md:flex-row gap-8 items-center">
                   <div className="aspect-square w-48 md:w-64 flex-shrink-0 relative">
                     <Image
@@ -84,6 +84,55 @@ export function About() {
                               />
                             </div>
                           </a>
+                        </div>
+                        <div className="mb-4">
+                          <div className="inline-flex items-center mb-2">
+                            <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary text-white border border-primary/80 text-sm font-medium gap-2">
+                              <Code2 className="h-4 w-4" />
+                              Technical Direction
+                            </span>
+                          </div>
+                          <div className="bg-background/90 rounded-lg px-4 py-3 text-base font-semibold text-foreground shadow-sm border border-border/40">
+                            AIを活用したWebアプリケーションの開発で、業務効率を飛躍的に向上させます
+                          </div>
+                          <Accordion type="single" collapsible className="mt-2">
+                            <AccordionItem value="kintai">
+                              <AccordionTrigger>具体的な実績を見る</AccordionTrigger>
+                              <AccordionContent>
+                                <ul className="space-y-2 mt-2">
+                                  <li className="flex items-center gap-2">
+                                    <span className="font-bold">kintai_tool</span>
+                                    <span className="text-xs text-muted-foreground">勤怠表自動入力ツール</span>
+                                    <a href="https://github.com/Tomo0108/kintai_tool" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                                      <ExternalLink className="inline h-4 w-4" />
+                                    </a>
+                                  </li>
+                                </ul>
+                              </AccordionContent>
+                            </AccordionItem>
+                          </Accordion>
+                        </div>
+                        <div className="mb-4">
+                          <div className="inline-flex items-center mb-2">
+                            <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary text-white border border-primary/80 text-sm font-medium gap-2">
+                              <Palette className="h-4 w-4" />
+                              Creative Direction
+                            </span>
+                          </div>
+                          <div className="bg-background/90 rounded-lg px-4 py-3 text-base font-semibold text-foreground shadow-sm border border-border/40">
+                            デザイン性とユーザー体験を両立したWebアプリケーションを提案・実現します
+                          </div>
+                        </div>
+                        <div className="mb-4">
+                          <div className="inline-flex items-center mb-2">
+                            <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary text-white border border-primary/80 text-sm font-medium gap-2">
+                              <Lightbulb className="h-4 w-4" />
+                              Strategy
+                            </span>
+                          </div>
+                          <div className="bg-background/90 rounded-lg px-4 py-3 text-base font-semibold text-foreground shadow-sm border border-border/40">
+                            戦略的な視点で課題を分析し、最適なソリューションを導きます
+                          </div>
                         </div>
                       </div>
                     </div>
