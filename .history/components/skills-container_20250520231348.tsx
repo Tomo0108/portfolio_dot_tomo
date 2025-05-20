@@ -173,7 +173,7 @@ export function SkillsContainer() {
                                   Zennで解説記事を読む
                                 </a>
                               </div>
-                            ) : example.id === 'tech-2' && example.videoUrl ? (
+                            ) : example.id === 'tech-2' ? (
                               <div className="pt-2 px-4 pb-4">
                                 <div className="relative overflow-hidden rounded-lg border border-border/50 bg-black/5">
                                   <video
@@ -181,11 +181,10 @@ export function SkillsContainer() {
                                     loop
                                     muted
                                     playsInline
-                                    preload="metadata"
-                                    controls
                                     className="w-full aspect-video object-cover"
-                                    src={example.videoUrl}
-                                  />
+                                  >
+                                    <source src="/movie/VBAマクロによる全角半角変換ツール.mp4" type="video/mp4" />
+                                  </video>
                                 </div>
                               </div>
                             ) : example.id === 'creative-2' ? (
@@ -288,8 +287,6 @@ export function SkillsContainer() {
                                     loop
                                     muted
                                     playsInline
-                                    preload="metadata"
-                                    controls
                                     className="w-full aspect-video object-cover"
                                     src={example.videoUrl}
                                   />

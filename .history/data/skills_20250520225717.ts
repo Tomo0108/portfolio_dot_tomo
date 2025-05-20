@@ -40,8 +40,7 @@ export const skills: Skill[] = [
         id: "tech-2",
         title: "VBAマクロによる全角/半角変換ツール作成",
         description: "住所を指定のフォーマットに変換する際に、作業時間を大幅に短縮",
-        longDescription: "住所データの全角/半角変換を自動化することで、大量のデータ処理を効率化し、作業時間を大幅に削減しました。",
-        videoUrl: "/movie/macro_tool.mp4"
+        longDescription: "住所データの全角/半角変換を自動化することで、大量のデータ処理を効率化し、作業時間を大幅に削減しました。"
       },
       {
         id: "tech-3",
@@ -79,7 +78,7 @@ export const skills: Skill[] = [
         title: "社内勉強会の企画・発表資料を制作",
         description: "社内のAIリテラシーを向上させる勉強会の企画とスライドショーを制作",
         longDescription: "詳細な技術仕様や成果についての詳細な説明をここに記載します。",
-        videoUrl: "/movie/syanai_kaigi.mp4"
+        videoUrl: "/movie/社内勉強会.mp4"
       }
     ]
   },
